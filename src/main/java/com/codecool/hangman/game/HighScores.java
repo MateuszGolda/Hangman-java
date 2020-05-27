@@ -5,11 +5,10 @@ import com.codecool.hangman.file.FileHandler;
 import java.io.*;
 
 public class HighScores implements Serializable {
-    final FileHandler fh;
-    final byte SIZE = 10;
-    final byte LAST_ELEM_ID = 9;
-    final String[] names;
-    final int[] scores;
+    private final FileHandler fh;
+    private final byte SIZE = 10;
+    private final String[] names;
+    private final int[] scores;
 
     public HighScores(FileHandler fh) throws IOException {
         this.fh = fh;
@@ -18,7 +17,7 @@ public class HighScores implements Serializable {
         load();
     }
 
-    public void load() throws IOException {
+    private void load() throws IOException {
         byte i = 0;
         for (String[] line : fh.getKeysAndValues()) {
             scores[i] = Integer.parseInt(line[0]);
@@ -26,7 +25,7 @@ public class HighScores implements Serializable {
         }
     }
 
-    public void save() throws FileNotFoundException {
+    void save() throws FileNotFoundException {
         fh.saveToFile(toString().trim());
     }
 
@@ -35,13 +34,14 @@ public class HighScores implements Serializable {
      * @param score score achieved by player
      * @return true if score added to high scores, false if not
      */
-    public boolean addToHighScores(String name, int score) {
+    boolean addToHighScores(String name, int score) {
         byte position = findPositionForInsertion(score);
 
         if (position == 10) {
             return false;
         }
 
+        final byte LAST_ELEM_ID = 9;
         for (byte i = LAST_ELEM_ID; i > position; i--) {
             scores[i] = scores[i - 1];
             names[i] = names[i - 1];

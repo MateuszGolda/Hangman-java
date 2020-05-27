@@ -5,8 +5,8 @@ import com.codecool.hangman.ui.ConsoleWriter;
 import java.io.IOException;
 
 public class SettingsMenuHandler {
-    boolean isRunning;
-    final ConsoleWriter cw;
+    private boolean isRunning;
+    private final ConsoleWriter cw;
 
     SettingsMenuHandler(ConsoleWriter cw) {
         isRunning = true;
@@ -25,7 +25,7 @@ public class SettingsMenuHandler {
     /**
      * @throws IOException If an I/O error occurs during input acquisition
      */
-    public void start() throws IOException {
+    void start() throws IOException {
         while (isRunning) {
             cw.clearScreen();
             cw.printMessage("settingsMenu");

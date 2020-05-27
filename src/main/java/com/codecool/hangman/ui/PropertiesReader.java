@@ -7,11 +7,11 @@ import java.util.Properties;
 public class PropertiesReader {
     private String fileName;
 
-    public PropertiesReader(String fileName) {
+    PropertiesReader(String fileName) {
         this.fileName = fileName;
     }
 
-    public String getProperty(String property) {
+    String getProperty(String property) {
         Properties prop = new Properties();
         try {
             prop.load(new FileInputStream(fileName));

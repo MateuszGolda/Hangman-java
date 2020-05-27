@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class TxtFileHandler implements FileHandler {
-    final String filePath;
+    private final String filePath;
 
     public TxtFileHandler(String filePath) {
         this.filePath = filePath;

@@ -9,15 +9,15 @@ public enum Settings {
     private final String LANGUAGE = "Language";
     private final String MAX_HP = "Starting hp";
 
-    public void setLanguage(String languagePath) {
+    void setLanguage(String languagePath) {
         prefs.put(LANGUAGE, languagePath);
     }
 
-    public String getLanguage() {
+    String getLanguage() {
         return prefs.get(LANGUAGE, "english");
     }
 
-    public void setMaxHp(int maxHp) {
+    void setMaxHp(int maxHp) {
         prefs.putInt(MAX_HP, maxHp);
     }
 

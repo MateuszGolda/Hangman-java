@@ -14,6 +14,7 @@ public class GameDisplay {
         this.cw = cw;
     }
 
+    @Override
     public String toString() {
         return String.format(cw.getMessage("life"), player.getHp())
                 + " ".repeat(5)

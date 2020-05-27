@@ -34,7 +34,7 @@ public class MainMenuHandler {
     /**
      * @throws IOException If an I/O error occurs during input acquisition
      */
-    public void start() throws IOException {
+    void start() throws IOException {
         while (isRunning) {
             cw.clearScreen();
             cw.printMessage("mainMenu");
