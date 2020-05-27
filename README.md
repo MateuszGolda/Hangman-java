@@ -1,37 +1,29 @@
 # Hangman
 
-Simple hangman game. Guess capital of the country to win.  
+A simple console based game. Guess capital of the country to win.  
 Don't make too many mistakes, or you will lose.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+When you start new game random country is chosen, and you have to guess it's capital.  
+You can provide a letter, or whole word - program will recognise which one was provided. For wrong letter 1 health point is divided, for wrong word - 2. You lose, when your hp reaches 0.  
+You can change the starting hp, and language in settings.
 
 ## Getting Started
 
-### Dependencies
+### Prerequisites
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
-### Installing
-
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Maven 3.6
+* Java 13, or 14
 
 ### Executing program
-
-* How to run the program
-* Step-by-step bullets
+For java 13:
 ```
-code blocks for commands
+mvn install && java --enable-preview -jar target/hangman.jar
 ```
-
-## Help
-
-Any advise for common problems or issues.
+For java 14 you have to edit java version in pom.xml, and then run it like this:
 ```
-command to run if program contains helper info
+mvn install && java -jar target/hangman.jar
 ```
 
 ## Author
