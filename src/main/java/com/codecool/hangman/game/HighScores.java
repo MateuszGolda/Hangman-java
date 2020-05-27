@@ -8,8 +8,8 @@ public class HighScores implements Serializable {
     final FileHandler fh;
     final byte SIZE = 10;
     final byte LAST_ELEM_ID = 9;
-    String[] names;
-    int[] scores;
+    final String[] names;
+    final int[] scores;
 
     public HighScores(FileHandler fh) throws IOException {
         this.fh = fh;
